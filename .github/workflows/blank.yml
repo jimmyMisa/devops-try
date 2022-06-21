@@ -24,15 +24,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: peterjgrainger/action-create-branch@v2.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
-        with:
-          branch: 'release-notes'
-          sha: '${{ github.event.pull_request.head.sha }}'
+
+      - name: Create release branche
+        run: |
+          git checkout -b sandbox/release-1.1
+          git push origin sandbox/release-1.1
 
       # Runs a single command using the runners shell
-      - name: Build
-        run: |
-          npm ci
-          npm run build
+      # - name: Build
+      #   run: |
+      #     npm ci
+      #     npm run build
