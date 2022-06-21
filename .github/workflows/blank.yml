@@ -27,11 +27,16 @@ jobs:
 
       - name: Create release branche
         run: |
-          git checkout -b sandbox/release-1.1
-          git push origin sandbox/release-1.1
+          git checkout -b sandbox/release-1.2
 
-      # Runs a single command using the runners shell
-      # - name: Build
-      #   run: |
-      #     npm ci
-      #     npm run build
+      Runs a single command using the runners shell
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Push release branche
+        run: |
+          git add -f /public/build
+          git commit -am "build"
+          git push origin sandbox/release-1.2
