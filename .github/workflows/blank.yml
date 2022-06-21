@@ -35,6 +35,7 @@ jobs:
         run: |
           git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
           git config --global user.name "jimmyMisa"
+          git fetch origin
           mkdir -p ./public/build/
           git branch -a >> ./public/build/branches.txt
 
