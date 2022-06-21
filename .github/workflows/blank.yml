@@ -36,6 +36,6 @@ jobs:
 
       - name: Push release branche
         run: |
-          git add -f /public/build
+          git add -f ./public/build/*
           git commit -am "build"
           git push origin sandbox/release-1.2
