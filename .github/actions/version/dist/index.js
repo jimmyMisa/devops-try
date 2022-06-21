@@ -9123,7 +9123,8 @@ version.major = version.major ? version.major : 0;
 version.minor = version.minor ? version.minor : 0;
 version.patch = version.patch ? version.patch : 0;
 
-version.patch = version.patch + 1;
+version.patch = parseInt(version.patch);
+version.patch = version.patch - 0 + 1;
 
 version = [version.major,version.minor,version.patch]
 
