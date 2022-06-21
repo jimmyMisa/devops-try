@@ -32,7 +32,7 @@ jobs:
           git fetch origin
           mkdir -p ./public/build/
           git branch -a >> ./public/build/branches.txt
-
+      
       - uses: ./.github/actions/version
         id: version
       - run: |
