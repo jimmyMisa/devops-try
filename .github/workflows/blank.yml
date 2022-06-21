@@ -47,17 +47,17 @@ jobs:
       - name: Remove Pseudo Branch
         run: |
           rm ./public/build/branches.txt
-      # - name: Build
-      #   run: |
-      #     npm ci
-      #     npm run build
-      
-      - name: Pseudo Build
+      - name: Build
         run: |
-          git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
-          git config --global user.name "jimmyMisa"
-          mkdir -p ./public/build/
-          touch ./public/build/test1.1.txt
+          npm ci
+          npm run build
+      
+      # - name: Pseudo Build
+      #   run: |
+      #     git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
+      #     git config --global user.name "jimmyMisa"
+      #     mkdir -p ./public/build/
+      #     touch ./public/build/test1.1.txt
 
       - name: Push release branch
         run: |
