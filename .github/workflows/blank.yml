@@ -29,10 +29,15 @@ jobs:
         run: |
           git checkout -b sandbox/release-1.2
 
-      - name: Build
+      # - name: Build
+      #   run: |
+      #     npm ci
+      #     npm run build
+      - name: Pseudo Build
         run: |
-          npm ci
-          npm run build
+          git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
+          git config --global user.name "jimmyMisa"
+          touch ./public/build/test1.1.txt
 
       - name: Push release branche
         run: |
