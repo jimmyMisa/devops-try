@@ -44,7 +44,6 @@ jobs:
           git config --global user.name "jimmyMisa"
           git checkout -b sandbox/release-${{ steps.version.outputs.version }}
 
-
       - name: Remove Pseudo Branch
         run: |
           rm ./public/build/branches.txt
