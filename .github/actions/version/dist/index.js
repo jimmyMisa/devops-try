@@ -9041,7 +9041,7 @@ var core = __nccwpck_require__(2186);
 var github = __nccwpck_require__(5438);
 var { readFileSync } = __nccwpck_require__(7147);
 
-var content = readFileSync(__nccwpck_require__.ab + "branches.txt", {encoding: "utf8"});
+var content = readFileSync('./public/build/branches.txt', {encoding: "utf8"});
 var spcontent = content.split("\n")
 spcontent = spcontent.map((sp) =>{
 	return sp.trim()
