@@ -1,0 +1,9 @@
+name: version management
+author: jimmy Misa
+description: Version management calculator
+outputs:
+  version:
+    description: "The version of the release"
+runs:
+  using: "node12"
+  main: "dist/index.js"

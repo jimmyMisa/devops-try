@@ -1,0 +1,7 @@
+* master
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/sandbox/release-1.1
+  remotes/origin/sandbox/release-1.2
+  remotes/origin/sandbox/release-1.3
