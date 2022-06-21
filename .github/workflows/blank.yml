@@ -27,18 +27,21 @@ jobs:
 
       - name: Create release branche
         run: |
-          git checkout -b sandbox/release-1.3
-
-      # - name: Build
-      #   run: |
-      #     npm ci
-      #     npm run build
-      - name: Pseudo Build
-        run: |
           git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
           git config --global user.name "jimmyMisa"
-          mkdir -p ./public/build/
-          touch ./public/build/test1.1.txt
+          git checkout -b sandbox/release-1.3
+
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+      
+      # - name: Pseudo Build
+      #   run: |
+      #     git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
+      #     git config --global user.name "jimmyMisa"
+      #     mkdir -p ./public/build/
+      #     touch ./public/build/test1.1.txt
 
       - name: Push release branche
         run: |
