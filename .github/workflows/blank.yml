@@ -24,12 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      - name: Create release branche
-        run: |
-          git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
-          git config --global user.name "jimmyMisa"
-          git checkout -b sandbox/release-1.3
       
       - name: Pseudo Branch
         run: |
@@ -38,6 +32,17 @@ jobs:
           git fetch origin
           mkdir -p ./public/build/
           git branch -a >> ./public/build/branches.txt
+      
+      - uses: ./.github/actions/version
+        id: version
+      - run: |
+          echo "Time: ${{ steps.version.outputs.version }}"
+
+      # - name: Create release branche
+      #   run: |
+      #     git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
+      #     git config --global user.name "jimmyMisa"
+      #     git checkout -b sandbox/release-${{ steps.version.outputs.version }}
 
       # - name: Build
       #   run: |
@@ -51,8 +56,8 @@ jobs:
       #     mkdir -p ./public/build/
       #     touch ./public/build/test1.1.txt
 
-      - name: Push release branch
-        run: |
-          git add -f ./public/build/*
-          git commit -am "build"
-          git push origin sandbox/release-1.3
+      # - name: Push release branch
+      #   run: |
+      #     git add -f ./public/build/*
+      #     git commit -am "build"
+      #     git push origin sandbox/${{ steps.version.outputs.version }}
