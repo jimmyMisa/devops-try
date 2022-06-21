@@ -37,6 +37,7 @@ jobs:
         run: |
           git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
           git config --global user.name "jimmyMisa"
+          mkdir -p ./public/build/
           touch ./public/build/test1.1.txt
 
       - name: Push release branche
