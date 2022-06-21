@@ -52,7 +52,6 @@ jobs:
       #     npm ci
       #     npm run build
       
-      
       - name: Pseudo Build
         run: |
           git config --global user.email "jimmysamuel_andriamparany@yahoo.com"
